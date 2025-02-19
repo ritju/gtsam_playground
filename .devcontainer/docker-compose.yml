@@ -1,0 +1,20 @@
+name: gtsam_playground
+services:
+  dev:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+      target: final
+      args:
+        - WORKSPACE=/workspace/gtsam_playground
+    volumes:
+      - ../:/workspace/gtsam_playground
+    platform: "linux/x86-64"
+    cap_add: 
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    command: sleep infinity
+    user: gtsam
+    network_mode: bridge
