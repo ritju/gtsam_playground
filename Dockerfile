@@ -14,6 +14,7 @@ RUN apt update \
     git \
     build-essential \
     g++ \
+    gdb \
     cmake \
     # Required by GTSAM
     libeigen3-dev \
